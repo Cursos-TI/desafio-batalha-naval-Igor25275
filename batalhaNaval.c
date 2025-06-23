@@ -6,7 +6,10 @@
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
-    int cont = 0; // contador while letras acimna
+    int cont = 0; // contador while letras acima
+
+     int barcoHorizontal[3] = {3,3,3}; // 05-06-07
+     int barcoVertical[3] = {3,3,3}; // 45-55-65
 
     int tabuleiro[10][10] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -44,15 +47,16 @@ int main() {
         {
             
            printf("  %d  ", tabuleiro[i][j]);
+
         }
         printf("\n");
     }
+        
+    
 
 
 
-
-
-
+    
 
 
 
