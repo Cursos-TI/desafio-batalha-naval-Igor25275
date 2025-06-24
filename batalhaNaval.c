@@ -45,6 +45,15 @@ int main() {
 
         for (int j = 0; j < 10; j++)
         {
+           // imprimir o barco Horizontal no tabuleiro 
+            tabuleiro[0][5] = barcoHorizontal[0];
+            tabuleiro[0][6] = barcoHorizontal[1];
+            tabuleiro[0][7] = barcoHorizontal[2];
+
+            // imprimir o barco Vertical no tabuleiro 
+            tabuleiro[4][5] = barcoVertical[0];
+            tabuleiro[5][5] = barcoVertical[1];
+            tabuleiro[6][5] = barcoVertical[2];
             
            printf("  %d  ", tabuleiro[i][j]);
 
