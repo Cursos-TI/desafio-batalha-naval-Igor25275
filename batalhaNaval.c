@@ -6,62 +6,54 @@
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
-    int cont = 0; // contador while letras acima
-
-     int barcoHorizontal[3] = {3,3,3}; // 05-06-07
-     int barcoVertical[3] = {3,3,3}; // 45-55-65
-
-    int tabuleiro[10][10] = {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
-
+    
+    int tabuleiro[10][10];
     char letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
+    //Inicializar tabuleiro com 0 em todas as posições.
     for (int i = 0; i < 10; i++)
     {
-        // imprime letras de cima
-        while (cont < 10)
-        {
-            printf("   %c ", letras[cont]);
-            cont++;
-
-            if (cont == 10)
-            {
-                printf("\n");
-            }
-        
-        }
-
-        printf("%d ", i + 1); // imprime numeros laterais
-
         for (int j = 0; j < 10; j++)
         {
-           // imprimir o barco Horizontal no tabuleiro 
-            tabuleiro[0][5] = barcoHorizontal[0];
-            tabuleiro[0][6] = barcoHorizontal[1];
-            tabuleiro[0][7] = barcoHorizontal[2];
+            tabuleiro[i][j] = 0;
+        }
+        
+    }
 
-            // imprimir o barco Vertical no tabuleiro 
-            tabuleiro[4][5] = barcoVertical[0];
-            tabuleiro[5][5] = barcoVertical[1];
-            tabuleiro[6][5] = barcoVertical[2];
-            
-           printf("  %d  ", tabuleiro[i][j]);
+    // Navio horizontal = F1-G1-H1
+    tabuleiro[0][5] = 3;
+    tabuleiro[0][6] = 3;
+    tabuleiro[0][7] = 3;
 
+    // Navio Vertical = E4-E5-E6
+    tabuleiro[5][4] = 3;
+    tabuleiro[6][4] = 3;
+    tabuleiro[7][4] = 3;
+
+    //Iniciar cabeçalho de letras
+    int k = 0;
+    printf("   ");
+
+    while (k < 10)
+    {
+        printf(" %c ", letras[k]);
+        k++;
+    }
+    
+    printf("\n");
+
+    //Inicializar tabuleiros com os Navios.
+
+    for(int i = 0; i < 10; i++)
+    {
+        printf("%2d ", i + 1); // Imprime cabeçalho de numeros laterais. i + 1 para ir de 1 até 10 pois 'i' inicializa com 0.
+
+        for(int j = 0; j < 10; j++)
+        {
+            printf(" %d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
-        
-    
 
 
 
