@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
@@ -9,26 +10,6 @@ int main() {
     
     int tabuleiro[10][10];
     char letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-
-    //Inicializar tabuleiro com 0 em todas as posições.
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            tabuleiro[i][j] = 0;
-        }
-        
-    }
-
-    // Navio horizontal = F1-G1-H1
-    tabuleiro[0][5] = 3;
-    tabuleiro[0][6] = 3;
-    tabuleiro[0][7] = 3;
-
-    // Navio Vertical = E4-E5-E6
-    tabuleiro[5][4] = 3;
-    tabuleiro[6][4] = 3;
-    tabuleiro[7][4] = 3;
 
     //Iniciar cabeçalho de letras
     int k = 0;
@@ -50,7 +31,26 @@ int main() {
 
         for(int j = 0; j < 10; j++)
         {
+            tabuleiro[i][j] = 0;
+
+            // imprime barco horizontal F1-G1-H1
+            if((i == 0 && j == 5) ||
+                    (i == 0 && j == 6) ||
+                        (i == 0 && j == 7))
+            {
+                tabuleiro[i][j] = 3;
+                // imprime barco vertical F5-F6-F7
+            }else  if((i == 4 && j == 5) ||  
+                         (i == 5 && j == 5) ||
+                            (i == 6 && j == 5))
+            {
+                    tabuleiro[i][j] = 3;
+            }
+            
+            
+            
             printf(" %d ", tabuleiro[i][j]);
+
         }
         printf("\n");
     }
