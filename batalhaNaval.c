@@ -47,6 +47,12 @@ int main() {
                     tabuleiro[i][j] = 3;
             }
             
+            if (i + j == 9 && i < 3 && j > 6)
+            {
+                
+               tabuleiro[i][j] = 3;
+            }
+            
             
             
             printf(" %d ", tabuleiro[i][j]);
